@@ -1,0 +1,166 @@
+@keyframes floatPhone {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  .float-animation {
+    animation: floatPhone 3s ease-in-out infinite;
+  }
+
+  .ball{
+    animation: floatball 3s ease-in-out infinite;
+  }
+  .ball1{
+    animation: floatball1 3s ease-in-out infinite;
+  }
+
+  @keyframes floatball1 {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  @keyframes floatball {
+    0% {
+      transform: translateX(0px);
+    
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  @keyframes waterEffect {
+    0% {
+      transform: scale(1) translateY(110px) rotate(0deg);
+      opacity: 0.7;
+    }
+    25% {
+      transform: scale(1.05) translateY(50px) rotate(2deg);
+      opacity: 0.85;
+    }
+    50% {
+      transform: scale(1.1) translateY(-100px) rotate(-2deg);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(2.05) translateY(-50px) rotate(1deg);
+      opacity: 0.9;
+    }
+    100% {
+      transform: scale(2) translateY(10px) rotate(0deg);
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes floatEffect {
+    0% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(220px);
+    }
+  }
+  
+  .effect {
+    animation: waterEffect 4s cubic-bezier(0.25, 1, 0.5, 1) infinite, 
+               floatEffect 3s ease-in-out infinite;
+  }
+
+
+  /* CSS */
+.management-title {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.neon-text {
+  color: #fff;
+  font-size: 4em;
+  text-transform: uppercase;
+  text-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px #ebff86,
+    0 0 20px #ebff86,
+    0 0 30px #ebff86;
+  animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+.neon-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.neon-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ebff86, transparent);
+  box-shadow: 0 0 10px #ebff86;
+  animation: underlineGrow 2s ease-out forwards;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow: 
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 10px #ebff86,
+      0 0 15px #ebff86,
+      0 0 20px #ebff86;
+  }
+  to {
+    text-shadow: 
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #ebff86,
+      0 0 30px #ebff86,
+      0 0 40px #ebff86;
+  }
+}
+
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2.5em;
+    text-shadow: 
+      0 0 3px #fff,
+      0 0 7px #fff,
+      0 0 15px #ebff86,
+      0 0 20px #ebff86;
+  }
+}

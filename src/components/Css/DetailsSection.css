@@ -1,0 +1,70 @@
+.neon-background {
+    position: relative;
+    background: #1D1C1C;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+  
+  .neon-background::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      #00fff0,
+      #0099ff,
+      #ff00ff,
+      #ff0099,
+      #00fff0
+    );
+    border-radius: 12px;
+    z-index: -1;
+    animation: neonGlow 3s linear infinite;
+    background-size: 400%;
+    filter: blur(5px);
+  }
+  
+  .neon-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #1D1C1C;
+    border-radius: 12px;
+    z-index: -1;
+  }
+  
+  @keyframes neonGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .neon-background:hover::before {
+    filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .neon-background {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+  }
